@@ -5,7 +5,7 @@ import logging
 import sys 
  
 # 学習済みモデルのロード
-model = word2vec.Word2Vec.load_word2vec_format("./word2vec/contents_wakati.bin", binary=True)
+model = word2vec.Word2Vec.load_word2vec_format("./fcontents_wakati.bin", binary=True, encoding='ISO-8859-1')
  
 # 入力された単語から近い単語をn個表示する
 def s(word1, word2, n=30):
@@ -20,5 +20,5 @@ if __name__ == '__main__':
     word1 = sys.argv[1]
     word2 = sys.argv[2]
     word1 = unicode(word1, 'utf-8')
-    word2 = unicode(word1, 'utf-8')
+    word2 = unicode(word2, 'utf-8')
     s(word1, word2)
